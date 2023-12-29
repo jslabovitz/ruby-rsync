@@ -67,8 +67,8 @@ private
     def change_list
       list = []
       @raw.split("\n").each do |line|
-        #if line =~ /^([<>ch.*][fdLDS][ .+\?cstTpoguax]{9}) (.*)$/
-        if line =~ /^([<>ch+\.\*].{10}) (.*)$/
+        if line =~ /^([<>ch.*][fdLDS][ .+?cstTpoguax]{9,10}) (.*)$/
+        #if line =~ /^([<>ch+\.\*].{10}) (.*)$/
           detail = Change.new(line)
           list << detail if detail.changed?
         end
